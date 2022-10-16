@@ -18,10 +18,11 @@ module.exports = {
         clean: true,
     },
     plugins: [
+        new MiniCssExtractPlugin(),
+        new CssMinimizerPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html'
-        }),
-        new CssMinimizerPlugin(),
+        })
     ],
     devServer: {
         static: './dist',
