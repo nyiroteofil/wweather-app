@@ -23,3 +23,10 @@ body {
 
     padding-left: 30px;
 }
+
+.weather-area {
+    grid-row-start: 2;
+    grid-row-end: 11;
+    background-size: cover;
+    background-position: center;
+}

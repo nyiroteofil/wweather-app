@@ -1,10 +1,29 @@
 import './style.css';
+import clearBG from './assets/clearSky.jpg';
+import fewCloudsBG from './assets/fewClouds.jpg';
+import scatteredCloudsBG from './assets/scatteredClouds.jpg'
+import brokenCloudsBG from './assets/brokenClouds.jpg';
+import showerRainBG from './assets/showerRain.jpg';
+import rainBG from './assets/rain.jpg';
+import thunderstormBG from './assets/thunderstorm.jpg';
+import snowBG from './assets/snow.jpg';
+import mistBG from './assets/mist.jpg';
 
-async function fetchWeather() {
-    fetch('http://api.openweathermap.org/data/2.5/forecast?q=Budapest&units=metric&cnt=5&APPID=a280ad62e485531769c9814cbc6bdfc8', {mode: 'cors'})
-        .then(response => {
-            console.log(response.json());
-        })
+import {
+    fetchWeatherMain,
+    setBackgrounds,
+} from './modules/functions.js'
+
+window.addEventListener('DOMContentLoaded', () => {fetchWeatherMain("Berhida")});
+
+export {
+    clearBG,
+    fewCloudsBG,
+    scatteredCloudsBG,
+    brokenCloudsBG,
+    showerRainBG,
+    rainBG,
+    thunderstormBG,
+    snowBG,
+    mistBG
 }
-
-window.addEventListener('DOMContentLoaded', fetchWeather);
