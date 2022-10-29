@@ -11,14 +11,32 @@
 <body>
    <div class="top-bar">
     <img src="#" alt="logo">
-    <input type="text">
+    <input id="search-bar" type="text">
+    <button id="search">search</button>
+    <h1 id="current-city">Berhida</h1>
    </div>
    <div class="weather-area">
-        <div class="day-1"></div>
-        <div class="day-2"></div>
-        <div class="day-3"></div>
-        <div class="day-4"></div>
-        <div class="day-5"></div>
+        <div class="today-section">
+            <div class="day-1">
+                <h2>Today</h2>
+                <div class="fields">
+                    <div class="day-fields field-1">
+                        <img class="icon" id="today-temp-icon" src="" alt="icon">
+                        <span id="today-temp-1">...</span>
+                    </div>
+                    <div class="day-fields field-2">
+                        <img class="icon" id="today-feel-icon" src="./assets/temp-feels-like.svg" alt="icon">
+                        <span id="today-feel-1">...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="coming-days">
+            <div class="day-2"></div>
+            <div class="day-3"></div>
+            <div class="day-4"></div>
+            <div class="day-5"></div>
+        </div>
    </div>
 </body>
 </html>

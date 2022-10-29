@@ -9,12 +9,24 @@ import thunderstormBG from './assets/thunderstorm.jpg';
 import snowBG from './assets/snow.jpg';
 import mistBG from './assets/mist.jpg';
 
+import sunnySVG from './assets/sunny.svg';
+import cloudySVG from './assets/cloudy.svg';
+import drizzleSVG from './assets/drizzle.svg';
+import rainSVG from './assets/rain.svg';
+import snowSVG from './assets/snow.svg';
+import thunderstormSVG from './assets/thunderstorm.svg';
+import fogSVG from './assets/fog.svg';
+import feelsLike from './assets/temp-feels-like.svg';
+
+document.querySelector('#today-feel-icon').src = feelsLike;
+
 import {
     fetchWeatherMain,
-    setBackgrounds,
 } from './modules/functions.js'
 
 window.addEventListener('DOMContentLoaded', () => {fetchWeatherMain("Berhida")});
+
+document.getElementById('search').addEventListener('click', () => {fetchWeatherMain(document.getElementById('search-bar').value)})
 
 export {
     clearBG,
@@ -25,5 +37,14 @@ export {
     rainBG,
     thunderstormBG,
     snowBG,
-    mistBG
+    mistBG,
+
+    sunnySVG,
+    cloudySVG,
+    drizzleSVG,
+    rainSVG,
+    snowSVG,
+    thunderstormSVG,
+    fogSVG,
+    feelsLike
 }

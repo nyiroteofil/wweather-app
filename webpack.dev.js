@@ -34,12 +34,12 @@ module.exports = {
         rules: [
             {
                 test: /.css$/,
-                use: [MiniCssExtractPlugin.loader, "style-loader"]
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
             },
             {
-                test: /.img|jpe?g|gif$/,
+                test: /.img|svg|jpe?g|gif$/,
                 type: "asset/resource"
-            }
+            },  
         ]
     }
 }
