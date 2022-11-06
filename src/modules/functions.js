@@ -31,6 +31,10 @@ async function fetchWeatherMain(city) {
         setBackgrounds(weatherJSON.list[0].weather[0].main, ".weather-area")
 
         setDays(weatherJSON);
+
+        document.querySelector('#humidity').textContent = weatherJSON.list[0].main.humidity + '%';
+    
+        document.querySelector('#pressure').textContent = weatherJSON.list[0].main.pressure + ' hPa'
     } catch (error) {
         console.log(error);
     };

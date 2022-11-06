@@ -17,8 +17,12 @@ import snowSVG from './assets/snow.svg';
 import thunderstormSVG from './assets/thunderstorm.svg';
 import fogSVG from './assets/fog.svg';
 import feelsLike from './assets/temp-feels-like.svg';
+import humiditySVG from './assets/humidity.svg';
+import pressureSVG from './assets/pressure.svg';
 
 document.querySelector('#today-feel-icon').src = feelsLike;
+document.querySelector('#humidity-icon').src = humiditySVG;
+document.querySelector('#pressure-icon').src = pressureSVG;
 
 import {
     fetchWeatherMain,

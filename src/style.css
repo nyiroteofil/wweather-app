@@ -44,6 +44,12 @@ body {
     width: 50px;
 }
 
+#pressure-icon {
+    width: 35px;
+    position: relative;
+    bottom: 6px;
+}
+
 .day-1 {
     width: 700px;
     height: 200px;
