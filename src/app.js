@@ -19,10 +19,25 @@ import fogSVG from './assets/fog.svg';
 import feelsLike from './assets/temp-feels-like.svg';
 import humiditySVG from './assets/humidity.svg';
 import pressureSVG from './assets/pressure.svg';
+import minTempSVG from './assets/min-temp.svg';
+import maxTempSVG from './assets/max-temp.svg'
+
 
 document.querySelector('#today-feel-icon').src = feelsLike;
 document.querySelector('#humidity-icon').src = humiditySVG;
 document.querySelector('#pressure-icon').src = pressureSVG;
+
+let maxTempIcons = document.querySelectorAll('.max-temp')
+let minTempIcons = document.querySelectorAll('.min-temp')
+
+maxTempIcons.forEach(i => {
+    i.src = maxTempSVG;
+})
+
+minTempIcons.forEach(i => {
+    i.src = minTempSVG;
+})
+
 
 import {
     fetchWeatherMain,

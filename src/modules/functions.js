@@ -26,18 +26,48 @@ async function fetchWeatherMain(city) {
     try {
         let weather = await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=5&APPID=a280ad62e485531769c9814cbc6bdfc8`, {mode: 'cors'});
         let weatherJSON = await weather.json();
-        document.querySelector('#current-city').textContent = city;
+        let dailyWeather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&cnt=5&APPID=a280ad62e485531769c9814cbc6bdfc8`, {mode: 'cors'});
+        let dailyWeatherJSON = await dailyWeather.json();
+
+        console.log(dailyWeatherJSON);
+
+        setForecastValues(weatherJSON);
+
+        document.querySelector('#current-city').textContent = dailyWeatherJSON.name;
         console.log(weatherJSON)
-        setBackgrounds(weatherJSON.list[0].weather[0].main, ".weather-area")
+        setBackgrounds(dailyWeatherJSON.weather[0].main, ".weather-area")
 
         setDays(weatherJSON);
 
-        document.querySelector('#humidity').textContent = weatherJSON.list[0].main.humidity + '%';
+        document.querySelector('#humidity').textContent = dailyWeatherJSON.main.humidity + '%';
     
-        document.querySelector('#pressure').textContent = weatherJSON.list[0].main.pressure + ' hPa'
+        document.querySelector('#pressure').textContent = dailyWeatherJSON.main.pressure + ' hPa'
     } catch (error) {
         console.log(error);
     };
+}
+
+/**assigning the forecasted teperatures */
+const setForecastValues = Obj => {
+    document.querySelector('#day-1-max').textContent = Obj.list[0].main.temp_max;
+    document.querySelector('#day-1-avg').textContent = Obj.list[0].main.temp;
+    document.querySelector('#day-1-min').textContent = Obj.list[0].main.temp_min;
+
+    document.querySelector('#day-2-max').textContent = Obj.list[1].main.temp_max;
+    document.querySelector('#day-2-avg').textContent = Obj.list[1].main.temp;
+    document.querySelector('#day-2-min').textContent = Obj.list[1].main.temp_min;
+
+    document.querySelector('#day-3-max').textContent = Obj.list[2].main.temp_max;
+    document.querySelector('#day-3-avg').textContent = Obj.list[2].main.temp;
+    document.querySelector('#day-3-min').textContent = Obj.list[2].main.temp_min;
+
+    document.querySelector('#day-4-max').textContent = Obj.list[3].main.temp_max;
+    document.querySelector('#day-4-avg').textContent = Obj.list[3].main.temp;
+    document.querySelector('#day-4-min').textContent = Obj.list[3].main.temp_min;
+
+    document.querySelector('#day-5-max').textContent = Obj.list[4].main.temp_max;
+    document.querySelector('#day-5-avg').textContent = Obj.list[4].main.temp;
+    document.querySelector('#day-5-min').textContent = Obj.list[4].main.temp_min;
 }
 
 const setBackgrounds = (weather, domElement) => {

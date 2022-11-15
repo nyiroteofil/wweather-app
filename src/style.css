@@ -44,10 +44,12 @@ body {
     width: 50px;
 }
 
+#humidity-icon {
+    width: 50px;
+}
+
 #pressure-icon {
-    width: 35px;
-    position: relative;
-    bottom: 6px;
+    width: 40px;
 }
 
 .day-1 {
@@ -72,4 +74,53 @@ body {
 
 h2 {
     text-align: center
+}
+
+.coming-days {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#forecast {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr;
+
+    width: 800px;
+    height: 300px;
+
+    background-color: grey;
+}
+
+#days-container {
+    grid-row-start: 2;
+    grid-row-end: 4;
+
+    display: grid;
+    grid-template: 1fr / repeat(5, 1fr)
+}
+
+.forecast-days {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.max-temp, .min-temp {
+    width: 50px;
+}
+
+.forecast-avg-temp {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.forecast-max-temp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
