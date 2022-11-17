@@ -11,7 +11,7 @@
 <body>
    <div class="top-bar">
     <img src="#" alt="logo">
-    <input id="search-bar" type="text">
+    <input id="search-bar" type="text" placeholder="London">
     <button id="search">search</button>
     <h1 id="current-city">Berhida</h1>
    </div>
@@ -43,8 +43,8 @@
             <div id="forecast">
                 <h2 id="forecast-header">Weather of the following 5 days</h2>
                 <div id="days-container">
-                    <div class="forecast-days" id="day-1">
-                        <img alt="weather">
+                    <div class="forecast-days">
+                        <img alt="weather" id="forecast-weather-1" class="icon">
                         <div class="forecast-max-temp">
                             <img alt="max-temp" class="max-temp">
                             <span id="day-1-max">...</span>
@@ -59,6 +59,7 @@
                         </div>
                     </div>
                     <div class="forecast-days">
+                        <img alt="weather" id="forecast-weather-2" class="icon">
                         <div class="forecast-max-temp">
                             <img alt="max-temp" class="max-temp">
                             <span id="day-2-max">...</span>
@@ -73,6 +74,7 @@
                         </div>
                     </div>
                     <div class="forecast-days">
+                        <img alt="weather" id="forecast-weather-3" class="icon">
                         <div class="forecast-max-temp">
                             <img alt="max-temp" class="max-temp">
                             <span id="day-3-max">...</span>
@@ -87,6 +89,7 @@
                         </div>
                     </div>
                     <div class="forecast-days">
+                        <img alt="weather" id="forecast-weather-4" class="icon">
                         <div class="forecast-max-temp">
                             <img alt="max-temp" class="max-temp">
                             <span id="day-4-max">...</span>
@@ -100,7 +103,8 @@
                             <span id="day-4-min">...</span>
                         </div>
                     </div>
-                    <div class="forecast-days">
+                    <div class="forecast-days" id="last-day">
+                        <img alt="weather" id="forecast-weather-5" class="icon">
                         <div class="forecast-max-temp">
                             <img alt="max-temp" class="max-temp">
                             <span id="day-5-max">...</span>
